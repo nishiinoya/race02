@@ -5,17 +5,11 @@ int main(int argc, char *argv[]) {
         mx_printerr("usage: ./way_home [file_name] [x1] [y1] [x2] [y2]\n");
         exit(0);
     }
-
     int x1 = mx_atoi(argv[2]);
 	int y1 = mx_atoi(argv[3]);
 	int x2 = mx_atoi(argv[4]);
 	int y2 = mx_atoi(argv[5]);
 
-    int map = open(argv[1], O_RDONLY);
-    if (map < 0) {
-        mx_printerr("map does not exist\n");
-        exit(0);
-    }
     // err if x1,y1 = '#' mx_printerr("entry point cannot be an obstacle");
     // err if x2,y2 = '#' mx_printerr("exit point cannot be an obstacle");
     // err : mx_printerr("route not found");
