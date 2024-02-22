@@ -32,6 +32,10 @@ int mx_strlen(const char *s);
 // atoi
 int mx_atoi(const char *str);
 
+void mx_lees_alghoritm(Map **map, int x, int y, int n);
+char *mx_openAndReWrite_file(char *path);
+char *mx_str_add(char *str, char c);
+
 // reads file and returns size of map (comas exluded)
 Map_size read_map(char *filename);
 void error_map_check(char *argv[], int x1, int y1, int x2, int y2, Size map_size);
