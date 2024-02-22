@@ -9,12 +9,12 @@
 
 typedef struct map_size {
     int width;
-    int heigth;
+    int height;
 } Size;
 
 typedef struct map {
     int width;
-    int heigth;
+    int height;
     int **dots;
 } Map;
 
@@ -39,6 +39,6 @@ char *mx_openAndReWrite_file(char *path);
 char *mx_str_add(char *str, char c);
 
 // reads file and returns size of map (comas exluded)
-Map_size read_map(char *filename);
+Size read_map(char *filename);
 void error_map_check(char *argv[], int x1, int y1, int x2, int y2, Size map_size);
 #endif

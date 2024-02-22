@@ -1,10 +1,10 @@
-#include "header.h"
+#include "../inc/header.h"
 
 void mx_lees_alghoritm(Map **map, int x, int y, int n)
 {
 	if(x < 0 || x >= (*map)->width || y < 0 || y >= (*map)->height)
 		return;
-        
+
 	if((*map)->dots[y][x] == -2)
 		return;
 	
