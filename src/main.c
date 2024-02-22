@@ -6,4 +6,14 @@ int main(int argc, char *agrv[]) {
         exit(0);
     }
     return 0;
+
+    int file = open(argv[1], O_RDONLY);
+    if(file < 0) {
+        mx_printerr("map does not exist\n");
+        exit(0);
+    }
+    if(close(file) < 0) {
+        mx_printerr("error\n");
+        exit(0);
+    }
 }
