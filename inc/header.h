@@ -6,6 +6,12 @@
 #include <unistd.h>
 #include <string.h>
 #include <fcntl.h>
+
+typedef struct map
+{
+    int width, lenght, **dots;
+}               Map;
+
 //print
 void mx_printstr(const char *s);
 void mx_printchar(char c);
@@ -21,5 +27,6 @@ char *mx_strnew(const int size);
 int mx_strlen(const char *s);
 //atoi
 int mx_atoi(const char *str);
+
 
 #endif
