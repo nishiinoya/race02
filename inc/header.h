@@ -9,7 +9,7 @@
 
 typedef struct map
 {
-    int width, lenght, **dots;
+    int width, height, **dots;
 }               Map;
 
 //print
