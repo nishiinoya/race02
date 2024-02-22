@@ -28,5 +28,8 @@ int mx_strlen(const char *s);
 //atoi
 int mx_atoi(const char *str);
 
+void mx_lees_alghoritm(Map **map, int x, int y, int n);
+char *mx_openAndReWrite_file(char *path);
+char *mx_str_add(char *str, char c);
 
 #endif
