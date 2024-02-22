@@ -13,9 +13,7 @@ typedef struct map_size {
 } Size;
 
 typedef struct map {
-    int width;
-    int heigth;
-    int **dots;
+    int width, heigth, **dots;
 } Map;
 
 // print
