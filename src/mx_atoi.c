@@ -1,4 +1,4 @@
-#include "../inc/list.h"
+#include "../inc/header.h"
 
 bool mx_isspace(char c) {
     if (c == ' ' ||
