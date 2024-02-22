@@ -10,12 +10,7 @@ int main(int argc, char *argv[]) {
 	int x2 = mx_atoi(argv[4]);
 	int y2 = mx_atoi(argv[5]);
 
-    // err if x1,y1 = '#' mx_printerr("entry point cannot be an obstacle");
-    // err if x2,y2 = '#' mx_printerr("exit point cannot be an obstacle");
-    // err : mx_printerr("route not found");
-    // err out of range mx_printerr("points are out of map range");
-
-
-    //we need to add a func that open a file and checks a chars inside 
-    
+    Size map_size = read_map(argv[1]);
+    error_map_check(argv, x1, y1, x2, y2, map_size);
+    return 0;
 }

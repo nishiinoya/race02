@@ -26,9 +26,13 @@ Size read_map(char *filename) {
     }
 
     close(fd);
+    if(close(fd) < 0) {
+        mx_printerr("error\n");
+        exit(0);
+    }
     Size map_size;
     map_size.width = width;
-    map_size.heigth = height;
+    map_size.height = height;
 
     return map_size;
 }

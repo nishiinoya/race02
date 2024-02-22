@@ -16,6 +16,7 @@ typedef struct map {
     int width;
     int height;
     int **dots;
+    int width, height, **dots;
 } Map;
 
 // print
@@ -35,7 +36,7 @@ int mx_strlen(const char *s);
 int mx_atoi(const char *str);
 
 void mx_lees_alghoritm(Map **map, int x, int y, int n);
-char *mx_openAndReWrite_file(char *path);
+char *mx_open_rewrite_file(char *argv[]);
 char *mx_str_add(char *str, char c);
 
 // reads file and returns size of map (comas exluded)

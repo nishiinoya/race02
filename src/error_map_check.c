@@ -6,8 +6,8 @@ void error_map_check(char *argv[], int x1, int y1, int x2,
     char *str_file = mx_file_to_str(argv[1], ",");
 
     // Check if x1, y1, x2, y2 are within the map boundaries
-    if (x1 < 0 || x1 >= map_size.width || y1 < 0 || y1 >= map_size.heigth ||
-        x2 < 0 || x2 >= map_size.width || y2 < 0 || y2 >= map_size.heigth) {
+    if (x1 < 0 || x1 >= map_size.width || y1 < 0 || y1 >= map_size.height ||
+        x2 < 0 || x2 >= map_size.width || y2 < 0 || y2 >= map_size.height) {
         mx_printerr("points are out of map range\n");
         exit(1);
     }
