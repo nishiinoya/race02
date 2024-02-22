@@ -11,6 +11,4 @@ void mx_printstr(const char *s);
 void mx_printchar(char c);
 void mx_printerr(const char *s);
 
-void error_handling(int map, char *argv[]);
-
 #endif
