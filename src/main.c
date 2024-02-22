@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
 	int y1 = mx_atoi(argv[3]);
 	int x2 = mx_atoi(argv[4]);
 	int y2 = mx_atoi(argv[5]);
-    
+
     int map = open(argv[1], O_RDONLY);
     if (map < 0) {
         mx_printerr("map does not exist\n");
@@ -23,16 +23,5 @@ int main(int argc, char *argv[]) {
 
 
     //we need to add a func that open a file and checks a chars inside 
-
-    return 0;
-
-    int file = open(argv[1], O_RDONLY);
-    if(file < 0) {
-        mx_printerr("map does not exist\n");
-        exit(0);
-    }
-    if(close(file) < 0) {
-        mx_printerr("error\n");
-        exit(0);
-    }
+    
 }
