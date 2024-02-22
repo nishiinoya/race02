@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../inc/header.h"
 
 void mx_lees_alghoritm(Map **map, int x, int y, int n)
 {
