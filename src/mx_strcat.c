@@ -1,4 +1,4 @@
-#include "file_to_str.h"
+#include "../inc/header.h"
 
 char *mx_strcat(char *s1, const char *s2 ) 
 {

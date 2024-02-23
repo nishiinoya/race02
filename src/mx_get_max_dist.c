@@ -4,7 +4,7 @@ int mx_get_max_dist(Map *map)
 {
     int max_num = 0;
 
-	for(int i = 0; i < map->heigth; i++)
+	for(int i = 0; i < map->height; i++)
     {
 		for(int j = 0; j < map->width; j++)
         {

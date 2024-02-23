@@ -2,13 +2,14 @@
 
 char *mx_str_add(char *str, char c)
 {
-	int size = mx_strlen(str) + 1;
-	char *s = mx_strnew(size);
-    
-	for(int i = 0; i < size; i++)
-		if(i == size - 1)
-			s[i] = c;
-		else 
-			s[i] = str[i];
-	return s;
+    int len = mx_strlen(str);
+    char *new_str = mx_strnew(len + 1);
+
+    mx_strcpy(new_str, str);
+    new_str[len] = c;
+    new_str[len + 1] = '\0'; 
+
+    free(str);
+
+    return new_str;
 }
