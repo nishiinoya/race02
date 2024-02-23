@@ -1,40 +1,33 @@
 #include "../inc/header.h"
 
-//modified to skip comas
-char *mx_file_to_str(const char *filename, char skip_symbol) {
-    int size = 0;
-    char c;
+char *mx_file_to_str(const char *filename) {
+    int file_open = open(filename, O_RDONLY);
+    char s[1];
+    int file_read = read(file_open, s, 1);
+    int counter = 0;
 
-    if (filename == NULL)
-        return NULL;
-
-    int fileToOpen = open(filename, O_RDONLY);
-    if (fileToOpen < 0)
-        return NULL;
-
-    // Calculate the size excluding the skipped symbol
-    while (read(fileToOpen, &c, 1))
-        if (c != skip_symbol){
-            size++;
+    while (file_read > 0) {
+        if (s[0] == '#' || s[0] == '.' || s[0] == '\n') {
+            ++counter;
         }
-
-    close(fileToOpen);
-
-    fileToOpen = open(filename, O_RDONLY);
-    if (fileToOpen < 0)
-        return NULL;
-
-    char *str = mx_strnew(size);
-    int index = 0;
-
-    // Read characters and skip the specified symbol
-    while (read(fileToOpen, &c, 1)) {
-        if (c != skip_symbol) {
-            str[index] = c;
-            index++;
-        }
+        file_read = read(file_open, s, 1);
     }
+    close(file_open);
 
-    close(fileToOpen);
-    return str;
+    file_open = open(filename, O_RDONLY);
+    char *res = (char *)malloc(counter + 1);
+
+    file_read = read(file_open, s, 1);
+
+    for (int i = 0; i < counter && file_read > 0; ++i) {
+        if (s[0] == '.' || s[0] == '#' || s[0] == '\n') {
+            res[i] = s[0];
+            ++i;
+        }
+        file_read = read(file_open, s, 1);
+        --i;
+    }
+    res[counter] = '\0';
+    close(file_open);
+    return res;
 }

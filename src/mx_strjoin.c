@@ -1,6 +1,4 @@
-#include "file_to_str.h"
-
-char *mx_strjoin(char const *s1, char const *s2);
+#include "../inc/header.h"
 
 char *mx_strjoin(char const *s1, char const *s2)
 {

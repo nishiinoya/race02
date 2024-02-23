@@ -1,4 +1,4 @@
-#include "file_to_str.h"
+#include "../inc/header.h"
 
 int mx_strlen(const char *s) 
 {
